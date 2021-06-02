@@ -11,6 +11,12 @@ class UserListController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
+
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+    
     public function index() {
         $users= User::all();
         return view ('admin.ListUser',compact('users'));

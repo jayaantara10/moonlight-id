@@ -12,6 +12,12 @@ class DiscountController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
+
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+    
     public function index() {
         $discount= Discount::join('products', 'discounts.id_product', 'products.id')->select('discounts.*','products.product_name')->where('discounts.status', null)->get();
         $products = AdminProduct::all();
