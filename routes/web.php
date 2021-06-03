@@ -49,7 +49,7 @@ Route::prefix('admin')->group(function()
 {
     // Route Admin
     // Dashboard
-    Route::get('/', 'AdminController@index')->name('admin.dashboard');
+    Route::get('/dashboard', 'AdminController@index')->name('admin.dashboard');
     Route::get('dashboard/products', 'AdminController@index')->name('admin.products');
     Route::get('/edit/produk', 'AdminProductController@editproduk')->name('edit.produk');
     Route::post('/ubah/produk', 'AdminProductController@ubahproduk')->name('ubah.produk');
