@@ -18,10 +18,6 @@ use Kavist\RajaOngkir\Facades\RajaOngkir;
 
 class ProductController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth:admin');
-    }
     
     public function index()
     {
